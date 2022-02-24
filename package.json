@@ -1,6 +1,6 @@
 {
   "name": "commitlint-config-ab",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Configuration for the commitlint",
   "main": "index.js",
   "scripts": {
