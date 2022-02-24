@@ -11,11 +11,15 @@ Basic specification is (Conventional Commits)[https://www.conventionalcommits.or
 ### Install 
 
 ```
-npm install --save-dev @commitlint/{config-conventional,cli}
+npm install --save-dev @commitlint/{config-conventional,cli} commitlint-config-ab
+```
+
+### Setup
+```
+echo "module.exports = {extends: ['@commitlint/config-conventional', 'ab']}" > commitlint.config.js
 ```
 
 ### husky integration
-
 ```
 # Install Husky v6
 npm install husky --save-dev
@@ -29,16 +33,9 @@ yarn husky install
 
 # Add hook
 npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
-# Sometimes above command doesn't work in some command interpreters
-# You can try other commands below to write npx --no -- commitlint --edit $1
-# in the commit-msg file.
-npx husky add .husky/commit-msg \"npx --no -- commitlint --edit '$1'\"
-# or
-npx husky add .husky/commit-msg "npx --no -- commitlint --edit $1"
-
-# or
-yarn husky add .husky/commit-msg 'yarn commitlint --edit $1'
 ```
+
+If it doesn't work check the (Getting Started for commitlint)[https://github.com/conventional-changelog/commitlint#getting-started]
 
 ## Format
 ```
